@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+button {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  height: 50px;
+  min-width: 100px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    scale: 0.98;
+  }
+}
+
+.active {
+  background-color: $primary-color;
+  color: $anti-primary-color;
+}
+.not-active {
+  color: $primary-color;
+  background-color: $anti-primary-color;
+}

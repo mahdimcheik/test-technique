@@ -1,0 +1,8 @@
+<nav>
+  <navbar-link
+    *ngFor="let link of links; let i = index"
+    [link]="link"
+    (clickEmitter)="changeActive(i)"
+    [isActive]="activeIndex.value === i"
+  ></navbar-link>
+</nav>

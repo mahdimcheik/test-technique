@@ -1,0 +1,8 @@
+@import "../../variables.scss";
+nav {
+  background-color: $secondary-color;
+  padding: 5px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}

@@ -1,0 +1,7 @@
+<button
+  [routerLink]="link.navPath"
+  [ngClass]="isActive ? 'active' : 'not-active'"
+  (click)="clickEmitter.emit()"
+>
+  {{ link.navText }}
+</button>
