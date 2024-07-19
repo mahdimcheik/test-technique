@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Paris",
+    "population": 2148327,
+    "longitude": 2.3522,
+    "latitude": 48.8566
+  },
+  {
+    "id": 2,
+    "name": "New York",
+    "population": 8419000,
+    "longitude": -74.006,
+    "latitude": 40.7128
+  },
+  {
+    "id": 3,
+    "name": "Tokyo",
+    "population": 13929286,
+    "longitude": 139.6917,
+    "latitude": 35.6895
+  },
+  {
+    "id": 4,
+    "name": "Sydney",
+    "population": 5373000,
+    "longitude": 151.2093,
+    "latitude": -33.8688
+  },
+  {
+    "id": 5,
+    "name": "Rio de Janeiro",
+    "population": 6748000,
+    "longitude": -43.1729,
+    "latitude": -22.9068
+  }
+]

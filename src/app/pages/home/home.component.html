@@ -1,1 +1,4 @@
-<p>home works!</p>
+<google-map height="400px" width="800px" [center]="center" [zoom]="zoom">
+  <map-marker *ngFor="let marker of markers" [position]="marker.position">
+  </map-marker>
+</google-map>
