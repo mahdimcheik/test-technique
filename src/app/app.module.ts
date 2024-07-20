@@ -18,6 +18,7 @@ import { DialogGenericComponent } from './components/modals/dialog-generic/dialo
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { EditAddCityComponent } from './components/modals/edit-add-city/edit-add-city.component';
 import { FormsModule } from '@angular/forms';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     SidebarModule,
     DialogModule,
     FormsModule,
+    DividerModule,
   ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent],

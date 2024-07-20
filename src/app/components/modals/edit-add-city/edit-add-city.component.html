@@ -12,7 +12,10 @@
       (ngSubmit)="myForm.valid && validation() && validate()"
     >
       <header>
-        You are editing the city <span>{{ city.name | titlecase }}</span>
+        <span *ngIf="editMode">
+          You are editing the city <span>{{ city.name | titlecase }}</span>
+        </span>
+        <span *ngIf="!editMode"> Add new city </span>
       </header>
       <div class="input-label">
         <label for="cityName">Capital Name <span class="error">*</span></label>

@@ -32,6 +32,13 @@ export class MapService {
   }
 
   updateCapital(id: number, city: City): Observable<City> {
-    return this.http.put<City>(environment.JSON_SERVER + '/capitals', city);
+    return this.http.put<City>(
+      environment.JSON_SERVER + '/capitals/' + id,
+      city
+    );
+  }
+
+  addCapital(city: City): Observable<City> {
+    return this.http.post<City>(environment.JSON_SERVER + '/capitals/', city);
   }
 }

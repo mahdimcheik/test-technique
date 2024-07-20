@@ -11,6 +11,7 @@ export class EditAddCityComponent {
   @Output() onValidate = new EventEmitter<City>();
   @Input() visible = false;
   @Input() city!: City;
+  @Input() editMode: boolean = true;
 
   errorPopulation = false;
 

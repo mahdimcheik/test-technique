@@ -1,3 +1,10 @@
+<button class="new-city">
+  <div>
+    <img src="assets/plus.svg" alt="" height="25" width="25" />
+  </div>
+  <span>Add new city</span>
+</button>
+<p-divider />
 <list-capitals
   *ngIf="listCapitals$ | async as capitals"
   [capitals]="capitals"

@@ -24,5 +24,10 @@ export class CityCardComponent {
   }
   edit(event: City) {
     console.log('new city ', event);
+    this.mapService
+      .updateCapital(event.id, this.city)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
+    this.showEditModal = false;
   }
 }
