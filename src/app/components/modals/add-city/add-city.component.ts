@@ -1,16 +1,16 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { City } from '../../../models/city';
+import { City, CityCreateDto } from '../../../models/city';
 
 @Component({
-  selector: 'edit-add-city',
-  templateUrl: './edit-add-city.component.html',
-  styleUrl: './edit-add-city.component.scss',
+  selector: 'add-city',
+  templateUrl: './add-city.component.html',
+  styleUrl: './add-city.component.scss',
 })
-export class EditAddCityComponent {
+export class AddCityComponent {
   @Output() onCancel = new EventEmitter();
-  @Output() onValidate = new EventEmitter<City>();
+  @Output() onValidate = new EventEmitter<CityCreateDto>();
   @Input() visible = false;
-  @Input() city!: City;
+  @Input() city!: CityCreateDto;
 
   errorPopulation = false;
 

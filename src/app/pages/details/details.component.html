@@ -10,11 +10,10 @@
   [capitals]="capitals"
 ></list-capitals>
 
-<edit-add-city
+<add-city
   [city]="city"
-  [editMode]="false"
   [visible]="showAddModal"
   (onCancel)="showAddModal = false"
   (onValidate)="validate($event)"
 >
-</edit-add-city>
+</add-city>

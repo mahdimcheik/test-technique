@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
-import { City } from '../models/city';
+import { City, CityCreateDto } from '../models/city';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
@@ -38,7 +38,13 @@ export class MapService {
     );
   }
 
-  addCapital(city: City): Observable<City> {
-    return this.http.post<City>(environment.JSON_SERVER + '/capitals/', city);
+  addCapital(city: CityCreateDto): Observable<City[]> {
+    return this.http
+      .post<City>(environment.JSON_SERVER + '/capitals/', city)
+      .pipe(
+        switchMap(() => {
+          return this.getCapitals();
+        })
+      );
   }
 }

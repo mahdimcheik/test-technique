@@ -12,9 +12,7 @@
       (ngSubmit)="myForm.valid && validation() && validate()"
     >
       <header>
-        <span>
-          You are editing the city <span>{{ city.name | titlecase }}</span>
-        </span>
+        <span> Add new city </span>
       </header>
       <div class="input-label">
         <label for="cityName">Capital Name <span class="error">*</span></label>
@@ -112,7 +110,7 @@
           Cancel
         </button>
         <button (click)="validate()" [ngClass]="'active'" type="button">
-          <span> Update </span>
+          <span> Create </span>
         </button>
       </div>
     </form>

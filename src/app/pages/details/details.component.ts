@@ -1,7 +1,7 @@
 import { Component, DestroyRef, inject } from '@angular/core';
 import { MapService } from '../../services/map.service';
 import { map } from 'rxjs';
-import { City } from '../../models/city';
+import { City, CityCreateDto } from '../../models/city';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -26,7 +26,7 @@ export class DetailsComponent {
 
   showAddModal = false;
 
-  validate(event: City) {
+  validate(event: CityCreateDto) {
     if (!event.imgUrl) {
       event.imgUrl = 'https://www.fillmurray.com/640/360';
     }
@@ -34,5 +34,6 @@ export class DetailsComponent {
       .addCapital(this.city)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe();
+    this.showAddModal = false;
   }
 }

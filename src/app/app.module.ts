@@ -19,6 +19,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { EditAddCityComponent } from './components/modals/edit-add-city/edit-add-city.component';
 import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
+import { AddCityComponent } from './components/modals/add-city/add-city.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DividerModule } from 'primeng/divider';
     ListCapitalsComponent,
     DialogGenericComponent,
     EditAddCityComponent,
+    AddCityComponent,
   ],
   imports: [
     BrowserModule,
