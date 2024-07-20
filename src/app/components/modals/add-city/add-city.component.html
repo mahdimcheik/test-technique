@@ -8,6 +8,7 @@
 >
   <main>
     <form
+      [formGroup]="cityForm"
       #myForm="ngForm"
       (ngSubmit)="myForm.valid && validation() && validate()"
     >

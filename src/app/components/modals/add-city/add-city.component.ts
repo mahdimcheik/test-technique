@@ -1,18 +1,46 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { City, CityCreateDto } from '../../../models/city';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'add-city',
   templateUrl: './add-city.component.html',
   styleUrl: './add-city.component.scss',
 })
-export class AddCityComponent {
+export class AddCityComponent implements OnInit {
   @Output() onCancel = new EventEmitter();
   @Output() onValidate = new EventEmitter<CityCreateDto>();
   @Input() visible = false;
   @Input() city!: CityCreateDto;
 
-  errorPopulation = false;
+  formBuilder = inject(FormBuilder);
+
+  cityForm = this.formBuilder.group({
+    name: [''],
+    country: [''],
+    population: [0],
+    longitude: [0],
+    latitude: [0],
+    imgUrl: [''],
+  });
+
+  ngOnInit(): void {
+    this.cityForm = this.formBuilder.group({
+      name: [this.city.name],
+      country: [this.city.country],
+      population: [this.city.population],
+      longitude: [this.city.longitude],
+      latitude: [this.city.latitude],
+      imgUrl: [this.city.imgUrl],
+    });
+  }
 
   validate() {
     if (this.validation()) {

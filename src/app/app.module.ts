@@ -20,6 +20,7 @@ import { EditAddCityComponent } from './components/modals/edit-add-city/edit-add
 import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
 import { AddCityComponent } from './components/modals/add-city/add-city.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AddCityComponent } from './components/modals/add-city/add-city.componen
     DialogModule,
     FormsModule,
     DividerModule,
+    ReactiveFormsModule,
   ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent],

@@ -23,4 +23,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.mapService.cityDetails$.next({} as City);
   }
+
+  findMe() {
+    this.mapService.getPosition().subscribe();
+  }
 }

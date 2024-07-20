@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, of, switchMap, tap } from 'rxjs';
 import { City, CityCreateDto } from '../models/city';
 import { environment } from '../../environments/environment.development';
 
@@ -46,5 +46,14 @@ export class MapService {
           return this.getCapitals();
         })
       );
+  }
+
+  public getPosition(): Observable<any> {
+    return of(
+      navigator.geolocation.watchPosition(
+        (pos) => console.log('position ', pos),
+        () => console.log('error')
+      )
+    );
   }
 }
