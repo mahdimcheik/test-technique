@@ -4,27 +4,25 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 800px;
+  align-items: center;
+  width: 350px;
   height: 450px;
   padding: 20px 10px;
   margin: 10px 20px;
-  background-color: rgb(253, 251, 247);
+  background-color: antiquewhite;
   border-radius: 10px;
   header {
     font-weight: 600;
     font-size: 32px;
     margin-bottom: 10px;
-    align-self: center;
-  }
-  img {
-    border-radius: 5px;
-    align-self: center;
   }
   body {
     h2 {
       margin-top: 5px;
     }
-
+    img {
+      border-radius: 5px;
+    }
     ul {
       text-decoration: none;
       list-style: none;

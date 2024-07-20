@@ -1,20 +1,22 @@
-<google-map
-  height="400px"
-  width="800px"
-  [center]="center"
-  [zoom]="zoom"
-  *ngIf="{ capitals: capitals$ | async } as capitals"
->
-  <map-marker
-    *ngFor="let capital of capitals.capitals"
-    [position]="{ lng: capital.longitude, lat: capital.latitude }"
-    (mapClick)="moveMap(capital)"
+<main>
+  <google-map
+    height="400px"
+    width="800px"
+    [center]="center"
+    [zoom]="zoom"
+    *ngIf="{ capitals: capitals$ | async } as capitals"
   >
-  </map-marker>
-</google-map>
+    <map-marker
+      *ngFor="let capital of capitals.capitals"
+      [position]="{ lng: capital.longitude, lat: capital.latitude }"
+      (mapClick)="moveMap(capital)"
+    >
+    </map-marker>
+  </google-map>
 
-<ng-container *ngIf="mapService.cityDetails$ | async as city">
-  <ng-container *ngIf="city.country">
-    <app-city-legend [city]="city"></app-city-legend>
+  <ng-container *ngIf="mapService.cityDetails$ | async as city">
+    <ng-container *ngIf="city.country">
+      <app-city-legend [city]="city"></app-city-legend>
+    </ng-container>
   </ng-container>
-</ng-container>
+</main>

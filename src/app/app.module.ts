@@ -10,6 +10,7 @@ import { DetailsComponent } from './pages/details/details.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http';
 import { CityLegendComponent } from './components/city-legend/city-legend.component';
+import { CityCardComponent } from './components/city-card/city-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CityLegendComponent } from './components/city-legend/city-legend.compon
     NavbarLinkComponent,
     DetailsComponent,
     CityLegendComponent,
+    CityCardComponent,
   ],
   imports: [
     BrowserModule,
