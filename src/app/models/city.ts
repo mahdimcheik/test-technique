@@ -19,11 +19,13 @@ export class City {
   }
 
   toMapFormat(): Position {
-    return { lat: this.latitude, lng: this.longitude };
+    return { position: { lat: this.latitude, lng: this.longitude } };
   }
 }
 
 export type Position = {
-  lat: number;
-  lng: number;
+  position: {
+    lat: number;
+    lng: number;
+  };
 };
