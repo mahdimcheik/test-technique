@@ -1,4 +1,4 @@
-<button class="new-city">
+<button class="new-city" (click)="showAddModal = true">
   <div>
     <img src="assets/plus.svg" alt="" height="25" width="25" />
   </div>
@@ -9,3 +9,12 @@
   *ngIf="listCapitals$ | async as capitals"
   [capitals]="capitals"
 ></list-capitals>
+
+<edit-add-city
+  [city]="city"
+  [editMode]="false"
+  [visible]="showAddModal"
+  (onCancel)="showAddModal = false"
+  (onValidate)="validate($event)"
+>
+</edit-add-city>

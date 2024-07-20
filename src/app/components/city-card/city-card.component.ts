@@ -18,14 +18,14 @@ export class CityCardComponent {
 
   delete() {
     this.mapService
-      .deleteCapital(this.city.id)
+      .deleteCapital(this.city.id || 0)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe();
   }
   edit(event: City) {
     console.log('new city ', event);
     this.mapService
-      .updateCapital(event.id, this.city)
+      .updateCapital(event.id || 0, this.city)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe();
     this.showEditModal = false;

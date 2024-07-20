@@ -113,7 +113,8 @@
           Cancel
         </button>
         <button (click)="validate()" [ngClass]="'active'" type="button">
-          Validate
+          <span *ngIf="!editMode"> Create </span>
+          <span *ngIf="editMode"> Update </span>
         </button>
       </div>
     </form>
