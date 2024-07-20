@@ -10,7 +10,7 @@ import { City } from '../../models/city';
 })
 export class HomeComponent implements OnInit {
   mapService = inject(MapService);
-  capitals$ = this.mapService.getCapitals();
+  capitals$ = this.mapService.cityList$;
   destroyRef = inject(DestroyRef);
 
   center: google.maps.LatLngLiteral = { lat: 46.365, lng: 2.601 };

@@ -1,0 +1,19 @@
+@import "../../../variables.scss";
+
+.active {
+  background-color: $primary-color;
+  color: $anti-primary-color;
+}
+.not-active {
+  color: $primary-color;
+  background-color: $background-light-list;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+}

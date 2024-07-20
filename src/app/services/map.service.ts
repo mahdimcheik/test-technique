@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
 import { City } from '../models/city';
 import { environment } from '../../environments/environment.development';
 
@@ -11,18 +11,27 @@ export class MapService {
   private http = inject(HttpClient);
 
   cityDetails$: BehaviorSubject<City> = new BehaviorSubject({} as City);
+  cityList$ = new BehaviorSubject<City[]>([]);
 
   constructor() {}
 
   getCapitals(): Observable<City[]> {
     return this.http
       .get<City[]>(environment.JSON_SERVER + '/capitals')
-      .pipe(tap((res) => console.log(res)));
+      .pipe(tap((res) => this.cityList$.next(res)));
   }
 
-  getCapitalById(id: number): Observable<City> {
+  deleteCapital(id: number): Observable<City[]> {
     return this.http
-      .get<City>(environment.JSON_SERVER + '/capitals/' + id)
-      .pipe(tap((res) => console.log(res)));
+      .delete<City>(environment.JSON_SERVER + '/capitals/' + id)
+      .pipe(
+        switchMap(() => {
+          return this.getCapitals();
+        })
+      );
+  }
+
+  updateCapital(id: number, city: City): Observable<City> {
+    return this.http.put<City>(environment.JSON_SERVER + '/capitals', city);
   }
 }

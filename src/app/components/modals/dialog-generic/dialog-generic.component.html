@@ -1,0 +1,21 @@
+<p-dialog
+  [(visible)]="active"
+  [modal]="true"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [style]="{ width: '50vw', height: '50vh' }"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="false"
+>
+  <main>
+    <p>
+      Do you really want to delete the Capital
+      <span>{{ cityName | titlecase }}</span
+      >?
+    </p>
+    <div class="control">
+      <button [ngClass]="'not-active'" (click)="cancel()">Cancel</button>
+      <button (click)="validate()" [ngClass]="'active'">Validate</button>
+    </div>
+  </main>
+</p-dialog>

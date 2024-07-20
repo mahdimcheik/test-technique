@@ -19,7 +19,6 @@ export class NavbarComponent {
       navPath: '/details',
     },
   ];
-
   changeActive(index: number) {
     this.activeIndex.next(index);
   }

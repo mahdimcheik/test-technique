@@ -10,5 +10,18 @@
       <li>Longitude : {{ city.longitude }}</li>
       <li>latitude : {{ city.latitude }}</li>
     </ul>
+    <div class="control">
+      <button [ngClass]="'not-active'">Edit</button>
+      <button (click)="showDeleteModal = true" [ngClass]="'active'">
+        Delete
+      </button>
+    </div>
   </body>
 </article>
+
+<dialog-generic
+  [active]="showDeleteModal"
+  [cityName]="city.name"
+  (onClear)="showDeleteModal = false"
+  (onValidate)="delete()"
+></dialog-generic>
