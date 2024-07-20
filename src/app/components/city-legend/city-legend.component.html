@@ -1,0 +1,14 @@
+<article>
+  <header>Details about {{ city.name | titlecase }}</header>
+  <body>
+    <img [src]="city.imgUrl" alt="country image" width="300" height="200" />
+    <h2 class="title">{{ city.name | titlecase }}</h2>
+
+    <ul>
+      <li>Population : {{ city.population }}</li>
+      <li>Country : {{ city.country | titlecase }}</li>
+      <li>Longitude : {{ city.longitude }}</li>
+      <li>latitude : {{ city.latitude }}</li>
+    </ul>
+  </body>
+</article>

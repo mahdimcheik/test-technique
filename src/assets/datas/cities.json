@@ -1,37 +1,39 @@
-[
-  {
-    "id": 1,
-    "name": "Paris",
-    "population": 2148327,
-    "longitude": 2.3522,
-    "latitude": 48.8566
-  },
-  {
-    "id": 2,
-    "name": "New York",
-    "population": 8419000,
-    "longitude": -74.006,
-    "latitude": 40.7128
-  },
-  {
-    "id": 3,
-    "name": "Tokyo",
-    "population": 13929286,
-    "longitude": 139.6917,
-    "latitude": 35.6895
-  },
-  {
-    "id": 4,
-    "name": "Sydney",
-    "population": 5373000,
-    "longitude": 151.2093,
-    "latitude": -33.8688
-  },
-  {
-    "id": 5,
-    "name": "Rio de Janeiro",
-    "population": 6748000,
-    "longitude": -43.1729,
-    "latitude": -22.9068
-  }
-]
+{
+  "capitals": [
+    {
+      "id": 1,
+      "name": "Paris",
+      "population": 2148327,
+      "longitude": 2.3522,
+      "latitude": 48.8566
+    },
+    {
+      "id": 2,
+      "name": "Marseille",
+      "population": 861635,
+      "longitude": 5.3698,
+      "latitude": 43.2965
+    },
+    {
+      "id": 3,
+      "name": "Lyon",
+      "population": 515695,
+      "longitude": 4.8357,
+      "latitude": 45.764
+    },
+    {
+      "id": 4,
+      "name": "Toulouse",
+      "population": 479553,
+      "longitude": 1.4442,
+      "latitude": 43.6045
+    },
+    {
+      "id": 5,
+      "name": "Nice",
+      "population": 342522,
+      "longitude": 7.2619,
+      "latitude": 43.7102
+    }
+  ]
+}
