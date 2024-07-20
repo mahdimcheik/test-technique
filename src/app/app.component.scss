@@ -1,0 +1,33 @@
+@import "variables.scss";
+main {
+  header {
+    margin: 0 auto;
+    width: clamp(600px, 80%, 1200px);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $primary-color;
+    padding: 0 40px;
+    color: $anti-primary-color;
+    border-radius: 20px;
+
+    p.title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    p.intro {
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+  body {
+    display: flex;
+    .container-outlet {
+      padding: 20px;
+      flex-grow: 1;
+    }
+  }
+}
