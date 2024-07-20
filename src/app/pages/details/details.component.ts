@@ -1,6 +1,5 @@
 import { Component, DestroyRef, inject } from '@angular/core';
 import { MapService } from '../../services/map.service';
-import { map } from 'rxjs';
 import { City, CityCreateDto } from '../../models/city';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -15,7 +14,7 @@ export class DetailsComponent {
 
   listCapitals$ = this.mapService.cityList$;
 
-  city: City = {
+  city: CityCreateDto = {
     name: '',
     country: '',
     population: 0,

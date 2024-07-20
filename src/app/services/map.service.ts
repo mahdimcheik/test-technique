@@ -21,7 +21,7 @@ export class MapService {
       .pipe(tap((res) => this.cityList$.next(res)));
   }
 
-  deleteCapital(id: number): Observable<City[]> {
+  deleteCapital(id: string): Observable<City[]> {
     return this.http
       .delete<City>(environment.JSON_SERVER + '/capitals/' + id)
       .pipe(
@@ -31,7 +31,7 @@ export class MapService {
       );
   }
 
-  updateCapital(id: number, city: City): Observable<City> {
+  updateCapital(id: string, city: City): Observable<City> {
     return this.http.put<City>(
       environment.JSON_SERVER + '/capitals/' + id,
       city
