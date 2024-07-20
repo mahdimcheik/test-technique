@@ -12,6 +12,13 @@
       (mapClick)="moveMap(capital)"
     >
     </map-marker>
+
+    <map-marker
+      *ngIf="myPosition"
+      [position]="myPosition"
+      [options]="{ icon: { url: 'assets/32.png' }, zIndex: 100 }"
+    >
+    </map-marker>
   </google-map>
 
   <ng-container *ngIf="mapService.cityDetails$ | async as city">

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, switchMap, tap } from 'rxjs';
-import { City, CityCreateDto } from '../models/city';
+import { City, CityCreateDto, Position } from '../models/city';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
@@ -12,6 +12,9 @@ export class MapService {
 
   cityDetails$: BehaviorSubject<City> = new BehaviorSubject({} as City);
   cityList$ = new BehaviorSubject<City[]>([]);
+  myLocation = new BehaviorSubject<Position>({
+    coords: { latitude: 0, longitude: 0 },
+  });
 
   constructor() {}
 
@@ -48,12 +51,24 @@ export class MapService {
       );
   }
 
-  public getPosition(): Observable<any> {
-    return of(
-      navigator.geolocation.watchPosition(
-        (pos) => console.log('position ', pos),
-        () => console.log('error')
-      )
-    );
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position: Position) => {
+          if (position) {
+            console.log(
+              'Latitude: ' +
+                position.coords.latitude +
+                'Longitude: ' +
+                position.coords.longitude
+            );
+            this.myLocation.next(position);
+          }
+        },
+        (error) => console.log(error)
+      );
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
   }
 }
