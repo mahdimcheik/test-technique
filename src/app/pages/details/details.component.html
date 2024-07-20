@@ -2,9 +2,3 @@
   *ngIf="listCapitals$ | async as capitals"
   [capitals]="capitals"
 ></list-capitals>
-<dialog-generic
-  [active]="showModal"
-  [cityName]="'Test'"
-  (onClear)="cancel()"
-  (onValidate)="validate()"
-></dialog-generic>

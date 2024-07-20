@@ -11,7 +11,9 @@
       <li>latitude : {{ city.latitude }}</li>
     </ul>
     <div class="control">
-      <button [ngClass]="'not-active'">Edit</button>
+      <button [ngClass]="'not-active'" (click)="showEditModal = true">
+        Edit
+      </button>
       <button (click)="showDeleteModal = true" [ngClass]="'active'">
         Delete
       </button>
@@ -25,3 +27,10 @@
   (onClear)="showDeleteModal = false"
   (onValidate)="delete()"
 ></dialog-generic>
+<edit-add-city
+  [city]="city"
+  [visible]="showEditModal"
+  (onCancel)="showEditModal = false"
+  (onValidate)="edit($event)"
+>
+</edit-add-city>

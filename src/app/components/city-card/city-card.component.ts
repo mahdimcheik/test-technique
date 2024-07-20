@@ -11,6 +11,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class CityCardComponent {
   @Input() city!: City;
   showDeleteModal: boolean = false;
+  showEditModal: boolean = false;
 
   mapService = inject(MapService);
   destroyRef = inject(DestroyRef);
@@ -20,5 +21,8 @@ export class CityCardComponent {
       .deleteCapital(this.city.id)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe();
+  }
+  edit(event: City) {
+    console.log('new city ', event);
   }
 }
