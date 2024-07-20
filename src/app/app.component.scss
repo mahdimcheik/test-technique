@@ -1,5 +1,6 @@
-@import "variables.scss";
+@import "../variables.scss";
 main {
+  height: calc(100% - 110px);
   header {
     margin: 0 auto;
     width: clamp(600px, 80%, 1200px);
