@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
 import { AddCityComponent } from './components/modals/add-city/add-city.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditCityComponent } from './components/modals/edit-city/edit-city.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DialogGenericComponent,
     EditAddCityComponent,
     AddCityComponent,
+    EditCityComponent,
   ],
   imports: [
     BrowserModule,

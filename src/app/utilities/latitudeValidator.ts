@@ -28,10 +28,10 @@ export function populationValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value;
 
-    if (!value) {
-      return null;
+    if (!value || value <= 0) {
+      return { validRange: true };
     }
 
-    return value <= 0 ? { validRange: true } : null;
+    return null;
   };
 }

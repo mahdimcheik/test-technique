@@ -27,10 +27,16 @@
   (onClear)="showDeleteModal = false"
   (onValidate)="delete()"
 ></dialog-generic>
-<edit-add-city
+<!-- <edit-add-city
   [city]="city"
   [visible]="showEditModal"
   (onCancel)="showEditModal = false"
   (onValidate)="edit($event)"
 >
-</edit-add-city>
+</edit-add-city> -->
+
+<edit-city
+  [city]="city"
+  [visible]="showEditModal"
+  (onCancel)="showEditModal = false"
+></edit-city>

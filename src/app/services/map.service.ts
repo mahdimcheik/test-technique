@@ -34,11 +34,14 @@ export class MapService {
       );
   }
 
-  updateCapital(id: string, city: City): Observable<City> {
-    return this.http.put<City>(
-      environment.JSON_SERVER + '/capitals/' + id,
-      city
-    );
+  updateCapital(id: string, city: City): Observable<City[]> {
+    return this.http
+      .put<City[]>(environment.JSON_SERVER + '/capitals/' + id, city)
+      .pipe(
+        switchMap(() => {
+          return this.getCapitals();
+        })
+      );
   }
 
   addCapital(city: CityCreateDto): Observable<City[]> {

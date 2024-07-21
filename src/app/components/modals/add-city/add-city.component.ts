@@ -1,63 +1,57 @@
 import {
   Component,
+  DestroyRef,
   EventEmitter,
   inject,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
-import { City, CityCreateDto } from '../../../models/city';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { CityCreateDto } from '../../../models/city';
+import { FormBuilder, Validators } from '@angular/forms';
+import {
+  latitudeValidator,
+  longitudeValidator,
+  populationValidator,
+} from '../../../utilities/latitudeValidator';
+import { MapService } from '../../../services/map.service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'add-city',
   templateUrl: './add-city.component.html',
   styleUrl: './add-city.component.scss',
 })
-export class AddCityComponent implements OnInit {
+export class AddCityComponent {
   @Output() onCancel = new EventEmitter();
-  @Output() onValidate = new EventEmitter<CityCreateDto>();
   @Input() visible = false;
-  @Input() city!: CityCreateDto;
 
   formBuilder = inject(FormBuilder);
+  mapService = inject(MapService);
+  destroyRef = inject(DestroyRef);
 
   cityForm = this.formBuilder.group({
-    name: [''],
-    country: [''],
-    population: [0],
-    longitude: [0],
-    latitude: [0],
+    name: ['', [Validators.required]],
+    country: ['', [Validators.required]],
+    population: [0, [Validators.required, populationValidator()]],
+    longitude: [0, [Validators.required, longitudeValidator()]],
+    latitude: [0, [Validators.required, latitudeValidator()]],
     imgUrl: [''],
   });
 
-  ngOnInit(): void {
-    this.cityForm = this.formBuilder.group({
-      name: [this.city.name],
-      country: [this.city.country],
-      population: [this.city.population],
-      longitude: [this.city.longitude],
-      latitude: [this.city.latitude],
-      imgUrl: [this.city.imgUrl],
-    });
-  }
-
   validate() {
-    if (this.validation()) {
-      console.log('success');
-      this.onValidate.emit(this.city);
+    console.log('form data : ', this.cityForm.value);
+
+    const city: CityCreateDto = this.cityForm.value as CityCreateDto;
+
+    if (!city.imgUrl) {
+      city.imgUrl = 'https://www.fillmurray.com/640/360';
     }
+    this.mapService
+      .addCapital(city)
+      .pipe(first())
+      .subscribe(() => this.onCancel.emit());
   }
   cancel() {
     this.onCancel.emit();
-  }
-
-  validation() {
-    if (this.city.latitude < -90 || this.city.latitude > 90) return false;
-    if (this.city.longitude < -180 || this.city.longitude > 180) return false;
-    if (this.city.country.trim().length < 2) return false;
-    if (this.city.name.trim().length < 2) return false;
-    if (this.city.population <= 0) return false;
-    return true;
   }
 }

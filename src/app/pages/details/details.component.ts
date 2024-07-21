@@ -24,17 +24,4 @@ export class DetailsComponent {
   };
 
   showAddModal = false;
-
-  validate(event: CityCreateDto) {
-    console.log('event ', event);
-
-    if (!event.imgUrl) {
-      event.imgUrl = 'https://www.fillmurray.com/640/360';
-    }
-    this.mapService
-      .addCapital(this.city)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
-    this.showAddModal = false;
-  }
 }

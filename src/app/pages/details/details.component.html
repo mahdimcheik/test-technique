@@ -10,10 +10,5 @@
   [capitals]="capitals"
 ></list-capitals>
 
-<add-city
-  [city]="city"
-  [visible]="showAddModal"
-  (onCancel)="showAddModal = false"
-  (onValidate)="validate($event)"
->
+<add-city [visible]="showAddModal" (onCancel)="showAddModal = false">
 </add-city>

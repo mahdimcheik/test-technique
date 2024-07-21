@@ -1,0 +1,47 @@
+@import "../../../../variables.scss";
+
+.active {
+  background-color: $primary-color;
+  color: $anti-primary-color;
+}
+.not-active {
+  color: $primary-color;
+  background-color: $background-light-list;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 500px);
+    gap: 20px;
+
+    div.input-label {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        height: 35px;
+        padding-left: 10px;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.error {
+  color: red;
+}
+
+.city-name {
+  color: $primary-color;
+  font-weight: 700;
+}
