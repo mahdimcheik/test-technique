@@ -1,3 +1,49 @@
 {
-  "capitals": []
+  "capitals": [
+    {
+      "id": 1,
+      "name": "Paris",
+      "country": "France",
+      "population": 1241593,
+      "longitude": 2.3522,
+      "latitude": 48.8566,
+      "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/640px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Londres",
+      "country": "Angleterre",
+      "population": 8615200,
+      "longitude": -0.1275,
+      "latitude": 51.5072,
+      "imgUrl": "https://babylontours.com/wp-content/uploads/2016/09/london-441853_960_720.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Rome",
+      "country": "Italie",
+      "population": 2872295,
+      "longitude": 12.4833,
+      "latitude": 41.9028,
+      "imgUrl": "https://cdn.getyourguide.com/img/tour/33cca66c19886c9f.jpeg/98.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Berlin",
+      "country": "Allemagne",
+      "population": 3769500,
+      "longitude": 13.4105,
+      "latitude": 52.5233,
+      "imgUrl": "https://s7g10.scene7.com/is/image/stena/20150820_berlin-brandenburg-gate:16-9?ts=1649690367836&dpr=off"
+    },
+    {
+      "id": 5,
+      "name": "Madrid",
+      "country": "Espagne",
+      "population": 3305408,
+      "longitude": -3.7038,
+      "latitude": 40.4167,
+      "imgUrl": "https://images.ctfassets.net/bth3mlrehms2/3J5B8Z1QTy1OpCUaMDUOgo/a5d298f3c293a7bd0bc9e1a6a0424513/Madrid_crossing.jpg?w=3800&h=2137&fl=progressive&q=50&fm=jpg"
+    }
+  ]
 }
