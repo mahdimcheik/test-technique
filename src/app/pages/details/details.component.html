@@ -1,10 +1,12 @@
-<button class="new-city" (click)="showAddModal = true">
-  <div>
-    <img src="assets/plus.svg" alt="" height="25" width="25" />
-  </div>
-  <span>Ajouter une capitale</span>
-</button>
-<p-divider />
+<header>
+  <button class="new-city" (click)="showAddModal = true">
+    <div>
+      <img src="assets/plus.svg" alt="" height="25" width="25" />
+    </div>
+    <span>Ajouter une capitale</span>
+  </button>
+  <p-divider />
+</header>
 <list-capitals
   *ngIf="listCapitals$ | async as capitals"
   [capitals]="capitals"
