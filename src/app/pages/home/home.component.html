@@ -15,8 +15,8 @@
       </map-marker>
 
       <map-marker
-        *ngIf="myPosition"
-        [position]="myPosition"
+        *ngIf="mapService.myLocation | async as position"
+        [position]="position"
         [options]="{ icon: { url: 'assets/32.png' }, zIndex: 100 }"
       >
       </map-marker>

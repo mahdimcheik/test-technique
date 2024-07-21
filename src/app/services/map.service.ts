@@ -12,8 +12,9 @@ export class MapService {
 
   cityDetails$: BehaviorSubject<City> = new BehaviorSubject({} as City);
   cityList$ = new BehaviorSubject<City[]>([]);
-  myLocation = new BehaviorSubject<Position>({
-    coords: { latitude: 0, longitude: 0 },
+  myLocation = new BehaviorSubject<google.maps.LatLngLiteral>({
+    lat: 0,
+    lng: 0,
   });
 
   constructor() {}
@@ -59,7 +60,10 @@ export class MapService {
       navigator.geolocation.getCurrentPosition(
         (position: Position) => {
           if (position) {
-            this.myLocation.next(position);
+            this.myLocation.next({
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            });
           }
         },
         (error) => console.error(error)

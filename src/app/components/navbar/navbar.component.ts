@@ -29,11 +29,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.pipe(take(1)).subscribe((response) => {
       if (response instanceof NavigationStart) {
-        console.log(response.url);
-
         if (response.url === this.links[0].navPath) {
           this.activeIndex.next(0);
-          console.log('0');
         }
         if (response.url === this.links[1].navPath) {
           this.activeIndex.next(1);
