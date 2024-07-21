@@ -32,7 +32,7 @@ Pour mettre ne place ce projet il faut :
 
 <br/>
 
-3- Installer la clé envoyé par mail dnas le fichier index.html dans la balise script
+3- Installer la clé envoyée par mail dans le fichier index.html dans la balise script
 
 4- Lancer le projet
 <br/>
