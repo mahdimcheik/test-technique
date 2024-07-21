@@ -1,7 +1,7 @@
 {
   "capitals": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Paris",
       "country": "France",
       "population": 1241593,
@@ -10,7 +10,7 @@
       "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/640px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Londres",
       "country": "Angleterre",
       "population": 8615200,
@@ -19,7 +19,7 @@
       "imgUrl": "https://babylontours.com/wp-content/uploads/2016/09/london-441853_960_720.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Rome",
       "country": "Italie",
       "population": 2872295,
@@ -28,7 +28,7 @@
       "imgUrl": "https://cdn.getyourguide.com/img/tour/33cca66c19886c9f.jpeg/98.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Berlin",
       "country": "Allemagne",
       "population": 3769500,
@@ -37,7 +37,7 @@
       "imgUrl": "https://s7g10.scene7.com/is/image/stena/20150820_berlin-brandenburg-gate:16-9?ts=1649690367836&dpr=off"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Madrid",
       "country": "Espagne",
       "population": 3305408,

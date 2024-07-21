@@ -42,7 +42,9 @@ export class AddCityComponent {
     const city: CityCreateDto = this.cityForm.value as CityCreateDto;
 
     if (!city.imgUrl) {
-      city.imgUrl = 'https://www.fillmurray.com/640/360';
+      console.log('no image ');
+
+      city.imgUrl = 'https://picsum.photos/300/200';
     }
     this.mapService
       .addCapital(city)
