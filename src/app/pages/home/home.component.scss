@@ -2,4 +2,21 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+
+  .google-map {
+    position: relative;
+    .find-me {
+      position: absolute;
+      top: 10px;
+      left: 179px;
+    }
+    #find-me {
+      border-radius: 2px;
+      background-color: white;
+      height: 40px;
+      padding: 0 17px;
+      border: none;
+    }
+  }
 }

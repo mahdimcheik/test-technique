@@ -14,7 +14,7 @@ import {
   populationValidator,
 } from '../../../utilities/latitudeValidator';
 import { MapService } from '../../../services/map.service';
-import { first } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'add-city',
@@ -46,7 +46,7 @@ export class AddCityComponent {
     }
     this.mapService
       .addCapital(city)
-      .pipe(first())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => this.onCancel.emit());
   }
   cancel() {

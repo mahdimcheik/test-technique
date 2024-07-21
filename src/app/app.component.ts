@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavbarLinkModel } from './models/navbar-link-model';
 
 @Component({
   selector: 'app-root',

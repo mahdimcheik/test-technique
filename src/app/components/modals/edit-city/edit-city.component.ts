@@ -15,7 +15,7 @@ import {
   populationValidator,
 } from '../../../utilities/latitudeValidator';
 import { City } from '../../../models/city';
-import { first } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'edit-city',
@@ -59,7 +59,7 @@ export class EditCityComponent implements OnInit {
 
     this.mapService
       .updateCapital(city.id, city)
-      .pipe(first())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => this.onCancel.emit());
   }
   cancel() {
