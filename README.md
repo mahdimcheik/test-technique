@@ -1,27 +1,61 @@
-# TestTechnique
+# Résumé
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Ce projet est une application web réalisée avec Angular 17 pour le front-end et Json Server pour simuler un back-end. Elle utilise l'API Google Maps et nécessite une clé d'API pour fonctionner.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Pour mettre ne place ce projet il faut :
+<br/>
+1- Cloner le dépôt:
+<br/>
+<br/>
 
-## Code scaffolding
+```bash
+    git clone git@github.com:mahdimcheik/test-technique.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br/>
 
-## Build
+2- Accéder au répertoire et installer les dépendances:
+<br/>
+<br/>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+    cd test-technique
+```
 
-## Running unit tests
+<br/>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+    npm i
+```
 
-## Running end-to-end tests
+<br/>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3- Lancer le projet
+<br/>
+<br/>
 
-## Further help
+```bash
+    npm run dev
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Cette commande lancera simultanément le front-end et le back-end.
+
+Il est également possible de les lancer séparément: <br/>
+
+### Front-end
+
+```bash
+ng s -o
+```
+
+### Back-end
+
+```bash
+npx json-server capitals.json
+```
+
+## Remarque
+
+Une clé d'API Google Maps est nécessaire pour que l'application fonctionne. Insérez-la dans le fichier index.html.
