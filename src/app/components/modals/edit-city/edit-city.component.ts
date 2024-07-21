@@ -55,8 +55,6 @@ export class EditCityComponent implements OnInit {
   }
 
   validate() {
-    console.log('form data : ', this.cityForm.value);
-
     const city: City = this.cityForm.value as City;
 
     this.mapService

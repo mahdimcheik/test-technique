@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
 import { City, CityCreateDto, Position } from '../models/city';
 import { environment } from '../../environments/environment.development';
 
@@ -59,16 +59,10 @@ export class MapService {
       navigator.geolocation.getCurrentPosition(
         (position: Position) => {
           if (position) {
-            console.log(
-              'Latitude: ' +
-                position.coords.latitude +
-                'Longitude: ' +
-                position.coords.longitude
-            );
             this.myLocation.next(position);
           }
         },
-        (error) => console.log(error)
+        (error) => console.error(error)
       );
     } else {
       alert('Geolocation is not supported by this browser.');

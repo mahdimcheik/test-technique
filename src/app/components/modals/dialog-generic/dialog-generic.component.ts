@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BlockableUI } from 'primeng/api';
 
 @Component({
   selector: 'dialog-generic',

@@ -16,7 +16,6 @@ import { SidebarModule } from 'primeng/sidebar';
 import { DialogModule } from 'primeng/dialog';
 import { DialogGenericComponent } from './components/modals/dialog-generic/dialog-generic.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { EditAddCityComponent } from './components/modals/edit-add-city/edit-add-city.component';
 import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
 import { AddCityComponent } from './components/modals/add-city/add-city.component';
@@ -34,7 +33,6 @@ import { EditCityComponent } from './components/modals/edit-city/edit-city.compo
     CityCardComponent,
     ListCapitalsComponent,
     DialogGenericComponent,
-    EditAddCityComponent,
     AddCityComponent,
     EditCityComponent,
   ],

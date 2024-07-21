@@ -1,7 +1,6 @@
 import { Component, DestroyRef, inject } from '@angular/core';
 import { MapService } from '../../services/map.service';
-import { City, CityCreateDto } from '../../models/city';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { CityCreateDto } from '../../models/city';
 
 @Component({
   selector: 'app-details',

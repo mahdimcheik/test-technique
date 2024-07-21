@@ -39,8 +39,6 @@ export class AddCityComponent {
   });
 
   validate() {
-    console.log('form data : ', this.cityForm.value);
-
     const city: CityCreateDto = this.cityForm.value as CityCreateDto;
 
     if (!city.imgUrl) {
