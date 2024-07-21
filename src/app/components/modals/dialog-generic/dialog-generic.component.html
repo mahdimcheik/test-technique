@@ -10,13 +10,13 @@
 >
   <main>
     <p>
-      Do you really want to delete the Capital
+      Vous voulez supprimer cette capitale
       <span>{{ cityName | titlecase }}</span
       >?
     </p>
     <div class="control">
-      <button [ngClass]="'not-active'" (click)="cancel()">Cancel</button>
-      <button (click)="validate()" [ngClass]="'active'">Validate</button>
+      <button [ngClass]="'not-active'" (click)="cancel()">Annuler</button>
+      <button (click)="validate()" [ngClass]="'active'">Valider</button>
     </div>
   </main>
 </p-dialog>

@@ -14,12 +14,12 @@
     >
       <header>
         <span>
-          Update the city
+          Mettre à jour les données de
           <span class="city-name">{{ city.name | titlecase }}</span>
         </span>
       </header>
       <div class="input-label">
-        <label for="cityName">Capital Name <span class="error">*</span></label>
+        <label for="cityName">Nom <span class="error">*</span></label>
         <input
           type="text"
           id="cityName"
@@ -27,16 +27,16 @@
           formControlName="name"
         />
         <div class="error" *ngIf="myForm.submitted">
-          <span *ngIf="cityForm?.get('name')?.errors?.['required']"
-            >City is required</span
+          <span *ngIf="cityForm?.get('name')?.errors?.['required']">
+            Le nom est obligatoire</span
           >
-          <span *ngIf="cityForm?.get('name')?.errors?.['minlength']"
-            >Length must be greater than 2</span
+          <span *ngIf="cityForm?.get('name')?.errors?.['minlength']">
+            Au moins 2 Charactères</span
           >
         </div>
       </div>
       <div class="input-label">
-        <label for="cityCountry">Country <span class="error">*</span> </label>
+        <label for="cityCountry">Pays <span class="error">*</span> </label>
         <input
           type="text"
           id="cityCountry"
@@ -44,11 +44,11 @@
           formControlName="country"
         />
         <div *ngIf="myForm.submitted" class="error">
-          <span *ngIf="cityForm?.get('country')?.errors?.['required']"
-            >Country is required</span
+          <span *ngIf="cityForm?.get('country')?.errors?.['required']">
+            Le pays est obligatoire</span
           >
-          <span *ngIf="cityForm?.get('country')?.errors?.['minlength']"
-            >Length must be greater than 2</span
+          <span *ngIf="cityForm?.get('country')?.errors?.['minlength']">
+            Au moins 2 Charactères</span
           >
         </div>
       </div>
@@ -73,17 +73,15 @@
         />
         <div *ngIf="myForm.submitted" class="error">
           <span *ngIf="cityForm?.get('population')?.errors?.['required']"
-            >Population is required</span
+            >La population est obligatoire</span
           >
           <span *ngIf="cityForm?.get('population')?.errors?.['validRange']"
-            >Population must be greater than zero</span
+            >La population doit être un nombre positif</span
           >
         </div>
       </div>
       <div class="input-label">
-        <label for="cityLat"
-          >Capital Latitude <span class="error">*</span></label
-        >
+        <label for="cityLat">Latitude <span class="error">*</span></label>
         <input
           type="number"
           id="cityLat"
@@ -91,18 +89,16 @@
           formControlName="latitude"
         />
         <div *ngIf="myForm.submitted" class="error">
-          <span *ngIf="cityForm?.get('latitude')?.errors?.['required']"
-            >Latitude is required</span
+          <span *ngIf="cityForm?.get('latitude')?.errors?.['required']">
+            La latitude est obligatoire</span
           >
-          <span *ngIf="cityForm?.get('latitude')?.errors?.['validRange']"
-            >Latitude must be in rang [-90, +90]</span
+          <span *ngIf="cityForm?.get('latitude')?.errors?.['validRange']">
+            La latitude doit être dans cet interval [-90, +90]</span
           >
         </div>
       </div>
       <div class="input-label">
-        <label for="cityLng"
-          >Capital Longitude <span class="error">*</span></label
-        >
+        <label for="cityLng">Longitude <span class="error">*</span></label>
         <input
           type="number"
           id="cityLng"
@@ -110,20 +106,20 @@
           formControlName="longitude"
         />
         <div *ngIf="myForm.submitted" class="error">
-          <span *ngIf="cityForm?.get('longitude')?.errors?.['required']"
-            >Longitude is required</span
+          <span *ngIf="cityForm?.get('longitude')?.errors?.['required']">
+            La latitude est obligatoire</span
           >
-          <span *ngIf="cityForm?.get('longitude')?.errors?.['validRange']"
-            >Longitude must be in rang [-180, +180]</span
+          <span *ngIf="cityForm?.get('longitude')?.errors?.['validRange']">
+            La longitude doit être dans cet interval [-180, +180]</span
           >
         </div>
       </div>
       <div class="control">
         <button [ngClass]="'not-active'" (click)="cancel()" type="button">
-          Cancel
+          Annuler
         </button>
         <button [ngClass]="'active'" type="submit">
-          <span> Update </span>
+          <span> Actualiser </span>
         </button>
       </div>
     </form>

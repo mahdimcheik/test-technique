@@ -11,11 +11,11 @@ export class NavbarComponent {
   activeIndex = new BehaviorSubject<number>(0);
   links: NavbarLinkModel[] = [
     {
-      navText: 'Home',
+      navText: 'Ecran 1',
       navPath: '/',
     },
     {
-      navText: 'Details',
+      navText: 'Ecran 2',
       navPath: '/details',
     },
   ];
